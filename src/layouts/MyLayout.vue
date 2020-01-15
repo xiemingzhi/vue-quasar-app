@@ -117,6 +117,14 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <q-footer elevated>
+      <q-tabs v-model="tab">
+        <q-tab name="mails" icon="mail" label="Mails" />
+        <q-tab name="alarms" icon="alarm" label="Alarms" />
+        <q-tab name="movies" icon="movie" label="Movies" />
+      </q-tabs>
+    </q-footer>
   </q-layout>
 </template>
 
@@ -126,7 +134,8 @@ export default {
 
   data() {
     return {
-      leftDrawerOpen: false
+      leftDrawerOpen: false,
+      tab: "mails"
     };
   },
   methods: {
