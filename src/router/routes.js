@@ -1,8 +1,17 @@
+// quasar uses "" and paths start from src
+import TodoList from "components/TodoList";
+import AddTodoItem from "components/AddTodoItem";
+
 const routes = [
+  { path: "/todos", component: TodoList },
+  //{ path: "/todos/add", component: AddTodoItem },
   {
     path: "/",
     component: () => import("layouts/MyLayout.vue"),
-    children: [{ path: "", component: () => import("pages/Index.vue") }]
+    children: [
+      { path: "", component: () => import("components/TodoList.vue") },
+      { path: "add", component: AddTodoItem }
+    ]
   }
 ];
 

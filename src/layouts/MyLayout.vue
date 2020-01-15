@@ -9,7 +9,12 @@
           @click="leftDrawerOpen = !leftDrawerOpen"
           icon="menu"
           aria-label="Menu"
+          v-if="!isNotHome()"
         />
+        <q-btn flat dense class="q-mr-sm" v-if="isNotHome()" to="/">
+          <q-icon name="arrow_back_ios"></q-icon>
+          Back
+        </q-btn>
 
         <q-toolbar-title>
           Quasar App
@@ -123,6 +128,11 @@ export default {
     return {
       leftDrawerOpen: false
     };
+  },
+  methods: {
+    isNotHome() {
+      return this.$router.history.current["path"] !== "/";
+    }
   }
 };
 </script>
