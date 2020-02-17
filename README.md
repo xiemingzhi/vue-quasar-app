@@ -33,3 +33,20 @@ Inside rules
     "endOfLine":"auto"
   }],
 ```
+
+### Customize for android 
+Install [android studio](https://developer.android.com/studio/index.html) and android SDK.  
+Install [gradle](https://downloads.gradle-dn.com/distributions/gradle-4.10.3-all.zip).  
+Add ANDROID_HOME, GRADLE_HOME to PATH.  
+
+Install cordova
+```
+npm install -g cordova
+quasar mode add cordova 
+cd src-cordova
+cordova platform add android
+cordova requirements
+cd ..
+quasar dev -m cordova -T android
+```
+
